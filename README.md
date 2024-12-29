@@ -14,7 +14,6 @@ This project demonstrates the deployment of a scalable, fault-tolerant applicati
   - [Phase 4: Customizing Grafana Dashboards for EKS Monitoring](#phase-4-customizing-grafana-dashboards-for-eks-monitoring)
   - [Phase 5: Alerting Service and Notifications](#phase-5-alerting-service-and-notifications)
   - [Phase 6: CI/CD Integration](#phase-6-cicd-integration)
-- [How to Run](#how-to-run)
 - [References](#references)
 
 ---
@@ -103,38 +102,6 @@ project-root/
 - **Deliverables**:
   - CI/CD pipeline configuration files.
   - Logs/screenshots of successful builds, tests, and deployments.
-
----
-
-## How to Run
-### Prerequisites
-- AWS account with IAM permissions for EKS, EC2, and SES.
-- Tools installed on the client machine:
-  - AWS CLI
-  - kubectl
-  - Docker
-  - eksctl
-
-### Steps
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-repo/eks-monitoring-opentelemetry.git
-   cd eks-monitoring-opentelemetry
-   ```
-2. **Set Up the Environment**:
-   - Create an EKS cluster using `eksctl` or AWS Management Console.
-   - Configure Docker and Kubernetes as described in Phase 1.
-3. **Deploy Using Helm**:
-   ```bash
-   helm repo add opentelemetry https://open-telemetry.github.io/opentelemetry-helm-charts
-   helm install otel-app opentelemetry/opentelemetry-demo -n otel-demo
-   ```
-4. **Set Up Monitoring**:
-   - Apply Prometheus and Grafana configurations from the `monitoring/` folder.
-   - Access Grafana at `http://<grafana-endpoint>` and import custom dashboards.
-5. **Run CI/CD Pipeline**:
-   - Push code changes to trigger GitHub Actions.
-   - Verify successful builds, tests, and deployments in the logs.
 
 ---
 
